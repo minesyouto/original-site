@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Profile</title>
+    <meta name="description" content="Mineのポートフォリオサイトへようこそ！">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="slick/slick.css" media="screen">
+    <link rel="stylesheet" href="slick/slick-theme.css" media="screen">
+    
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="slick/slick.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    
+
+    <section id="welcome">
+        <div class="text-content">
+            <span class="type-text" id="ityped"></span>
+        </div>
+        <div class="top-content">
+            <img src="img/bottom.png">
+            <p class="scroll">Scroll</p>
+            <ul class="nav">
+                <li><a href="#welcome">Top</a></li>
+                <li><a href="#use">About</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="contact">Contact</a></li>
+            </ul>
+        </div>
+    </section><!-- welcome -->
+
+    <section id="use" class="wrapper">
+        <div class="content fadein">
+            <img class="fadein" src="img/prog-icon.png">
+            <p class="con-title fadein">Use</p>
+            <ul class="list fadein">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>JQuery</li>
+            </ul>
+        </div>
+        <div class="content">
+            <img class="fadein" src="img/website-icon.png">
+            <p class="con-title fadein">Ather</p>
+            <ul class="list fadein">
+                <li>Git</li>
+                <li>GitHub</li>
+            </ul>
+        </div>
+        <div class="content fadein">
+            <img class="fadein" src="img/serach-icon.png">
+            <p class="con-title fadein">Learn</p>
+            <ul class="list fadein">
+                <li>PHP</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section id="works" class="wrapper fadein">
+        <h3>Works</h3>
+        <p>
+            過去の作品集です。<br>
+            CodeStep様の模写多めです。随時更新予定。
+        </p>
+        <ul class="slider fadein">
+            <li><img src="img/travel.png"></li>
+            <li><img src="img/photobook.png"></li>
+            <li><img src="img/mag88.png"></li>
+            <li><img src="img/bicycle.png"></li>
+        </ul>
+    </section>
+
+    
+
+    <section id="profile" class="wrapper fadein">
+        <h3 class="con-title">Profile</h3>
+        <div class="profile-content">
+            <img src="img/profile.png">
+            <p>
+                Mine<br>
+                <br>
+                1998年10月26日生まれ　22歳。<br>
+                約6年、飲食業界で勤務。<br>
+                コロナ渦での飲食業界の未来に不安を感じ、IT業界への転職を決意。<br>
+                Webデザイナーを目指し日々奮闘中。 
+            </p>
+        </div>
+    </section>
+   
+    <section id="contact" class="wrapper fadein">
+        <h3 class="con-title">
+            Contact
+        </h3>
+        <form  action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeT_-yI1VP4-SgI3QNEl3tGyjaredlzIW_Sp_riKbYO_t71UA/formResponse">
+            <label for="form-name">お名前（ニックネーム）</label>
+            <p><input class="form" type="text" name="entry.1090086919" required=""></p>
+        
+            <label for="form-mail">メールアドレス</label>
+            <p><input class="form" type="email" name="entry.687213388" required=""></p>
+        
+            <label for="form-detail">お問い合わせ詳細</label>
+            <p>ご不明な点があれば、お気軽にご連絡くださいませ。</p>
+            <p><textarea class="form" name="entry.693552764" required=""></textarea></p>
+        
+            <p><button type="submit" name="button" value="送信する">送信する</button></p>
+        </form>
+    </section>
+
+    <footer id="footer">
+        <small>&copy;2020 Mine</small>
+    </footer>
+    
+     <!-- CDN -->
+   <script src="https://unpkg.com/ityped@1.0.3"></script>
+   　　<script>
+       
+        ityped.init(document.querySelector("#ityped"), {
+          strings: ['Hello World!!', 'Welcome to my PortFolio!!'],       
+          startDelay: 200,                                              
+          typeSpeed: 100,                                                 
+          loop: false,                                                   
+          backSpeed:  80,                                                 
+          backDelay:  1000,                                                
+          showCursor: false,                                              
+          cursorChar: "|",      
+        })
+        
+        $(".top-content").hide().delay(6500).fadeIn(3000);
+        $("").hide().delay(6500).fadeIn(3000);
+
+        $(window).scroll(function (){
+        $('.fadein').each(function(){
+        var elemPos = $(this).offset().top,
+            scroll = $(window).scrollTop(),
+            windowHeight = $(window).height();
+          if (scroll > elemPos - windowHeight + 100){
+              $(this).addClass('scrollin');
+            }
+        });
+        });
+
+        $(function() {
+        $('.slider').slick({
+            autoplay: true,
+            dots:true,
+            arrows:false,
+
+        });
+});
+        
+      </script>
+    
+   　　
+    
+</body>
+</html>
